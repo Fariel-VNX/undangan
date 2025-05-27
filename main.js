@@ -1,4 +1,37 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const music = document.getElementById('weddingMusic');
+    const toggleBtn = document.getElementById('musicToggle');
+    
+    // Set volume (30% untuk background music)
+    music.volume = 0.3;
+    
+    // Coba memutar otomatis
+    const playPromise = music.play();
+    
+    // Tangani error autoplay
+    if (playPromise !== undefined) {
+        playPromise.catch(error => {
+            // Jika autoplay diblokir, tampilkan kontrol
+            document.querySelector('.music-control').style.opacity = '0.5';
+        });
+    }
+    
+    // Toggle musik
+    toggleBtn.addEventListener('click', function() {
+        if (music.paused) {
+            music.play();
+        } else {
+            music.pause();
+        }
+    });
+    
+    // Deteksi interaksi pengguna untuk memungkinkan autoplay
+    document.body.addEventListener('click', function() {
+        music.play().catch(e => console.log('Autoplay diblokir'));
+    }, { once: true });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
     // WhatsApp RSVP
     const whatsappButton = document.getElementById('whatsappButton');
     const rsvpForm = document.getElementById('rsvpForm');

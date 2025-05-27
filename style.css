@@ -497,5 +497,36 @@ footer {
     left: 100%;
     margin-left: 15px;
 }
+/* Gaya Player Musik */
+.music-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
 
-/* Hapus style terkait couple-photo */
+.music-control:hover {
+    opacity: 1;
+}
+
+#musicToggle {
+    background: rgba(122, 139, 122, 0.7);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+#musicToggle:hover {
+    background: rgba(122, 139, 122, 0.9);
+    transform: scale(1.1);
+}
