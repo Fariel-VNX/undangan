@@ -506,17 +506,14 @@ footer {
 }
 
 #musicBtn {
-    background: rgba(122, 139, 122, 0.7);
+    background: 000000;
     border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    width: 10000px;
+    height: 10000px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: 18px;
     transition: all 0.3s ease;
 }
 
