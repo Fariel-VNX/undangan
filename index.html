@@ -9,15 +9,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Player Musik Tersembunyi -->
+    <!-- Audio Element (Hidden) -->
+    <audio id="bgMusic" loop autoplay>
+        <source src="music.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+
+    <!-- Kontrol Musik Minimal -->
     <div class="music-control">
-        <audio id="weddingMusic" loop>
-            <!-- Ganti dengan link musik Anda -->
-            <source src="Music.mp3" type="audio/mpeg">
-            Browser tidak mendukung audio.
-        </audio>
-        <button id="musicToggle" aria-label="Toggle Musik">
-            <i class="fas fa-music"></i>
+        <button id="musicBtn">
+            <i class="music-icon"></i>
         </button>
     </div>
     <!-- Dekorasi Bunga -->

@@ -1,37 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const music = document.getElementById('weddingMusic');
-    const toggleBtn = document.getElementById('musicToggle');
-    
-    // Set volume (30% untuk background music)
-    music.volume = 0.3;
-    
-    // Coba memutar otomatis
-    const playPromise = music.play();
-    
-    // Tangani error autoplay
-    if (playPromise !== undefined) {
-        playPromise.catch(error => {
-            // Jika autoplay diblokir, tampilkan kontrol
-            document.querySelector('.music-control').style.opacity = '0.5';
-        });
-    }
-    
-    // Toggle musik
-    toggleBtn.addEventListener('click', function() {
-        if (music.paused) {
-            music.play();
-        } else {
-            music.pause();
-        }
-    });
-    
-    // Deteksi interaksi pengguna untuk memungkinkan autoplay
-    document.body.addEventListener('click', function() {
-        music.play().catch(e => console.log('Autoplay diblokir'));
-    }, { once: true });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
     // WhatsApp RSVP
     const whatsappButton = document.getElementById('whatsappButton');
     const rsvpForm = document.getElementById('rsvpForm');
@@ -79,4 +46,55 @@ document.addEventListener('DOMContentLoaded', function() {
         
         container.style.transform = `translateY(${scrollPosition * 0.2}px)`;
     });
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const music = document.getElementById('bgMusic');
+    const musicBtn = document.getElementById('musicBtn');
+    
+    // Set volume (30% untuk background music)
+    music.volume = 0.3;
+    
+    // Fungsi untuk memulai musik
+    function startMusic() {
+        // Coba memutar musik
+        const playPromise = music.play();
+        
+        // Tangani jika autoplay diblokir
+        if (playPromise !== undefined) {
+            playPromise.catch(error => {
+                // Tampilkan pesan atau kontrol khusus
+                musicBtn.style.display = 'flex';
+                musicBtn.title = "Klik untuk memutar musik";
+            });
+        }
+    }
+    
+    // Mulai musik setelah interaksi pertama
+    function handleFirstInteraction() {
+        startMusic();
+        document.body.removeEventListener('click', handleFirstInteraction);
+        document.body.removeEventListener('keydown', handleFirstInteraction);
+        document.body.removeEventListener('touchstart', handleFirstInteraction);
+    }
+    
+    // Tambahkan event listeners untuk interaksi pertama
+    document.body.addEventListener('click', handleFirstInteraction);
+    document.body.addEventListener('keydown', handleFirstInteraction);
+    document.body.addEventListener('touchstart', handleFirstInteraction);
+    
+    // Kontrol tombol musik
+    musicBtn.addEventListener('click', function() {
+        if (music.paused) {
+            music.play();
+            musicBtn.innerHTML = '<i class="music-icon"></i>';
+        } else {
+            music.pause();
+            musicBtn.innerHTML = '<i class="music-icon" style="opacity:0.5"></i>';
+        }
+    });
+    
+    // Sembunyikan tombol jika musik berhasil autoplay
+    music.onplaying = function() {
+        musicBtn.style.display = 'none';
+    };
 });
