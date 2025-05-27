@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Digital</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Dekorasi Bunga -->
+    <div class="floral-decor decor-1"></div>
+    <div class="floral-decor decor-2"></div>
+    <div class="floral-decor decor-3"></div>
+    <div class="floral-decor decor-4"></div>
+    <div class="container">
+        <header>
+            <div class="header-floral">
+                <div class="floral-left"></div>
+                <div class="header-content">
+                    <div class="floral-border top"></div>
+                    <h1>Undangan Pernikahan</h1>
+                    <div class="floral-border bottom"></div>
+                </div>
+                <div class="floral-right"></div>
+            </div>
+        </header>
+    <div class="container">
+        <main>
+           <!-- Section Nama Pasangan tanpa Foto -->
+            <section class="couple-names-section">
+                <div class="name-card">
+                    <h3>Muhammad Fahmi Idris</h3>
+                    <p>Putra Dari Alm. KH. M. Yusuf dan Alm. Nyai HJ. Siti Zulaikhah</p>
+                </div>
+                <div class="amp">&</div>
+                <div class="name-card">
+                    <h3>Farina Noer Ilal 'Afiyah</h3>
+                    <p>Putri Dari Bapak Sohari Dan Ibu Siti Hamina</p>
+                </div>
+            </section>
+            <section class="details-section">
+                <div class="detail-card">
+                    <h3>Akad Nikah</h3>
+                    <p>Selasa, 10 Juni 2025</p>
+                    <p>08.00 - 10.00 WIB</p>
+                    <p>Kantor KUA Kecamatan Pujer</p>
+                    <p>Jl. Raya Pakisan</p>
+                </div>
+
+                <div class="detail-card">
+                    <h3>Resepsi</h3>
+                    <p>Selasa, 10 Juni 2025</p>
+                    <p>11.00 - 16.00 WIB</p>
+                    <p>Kediaman Ibu Siti Hamina</p>
+                    <p>Jl. Randulima 01, Pertigaan selatan</p>
+                </div>
+            </section>
+            
+            <section class="compact-map-section">
+            <h3>Lokasi Acara</h3>
+            <div class="compact-map-container">
+                <!-- Resepsi -->
+                <div class="compact-map-card">
+                    <h4><i class="fas fa-glass-cheers"></i> Resepsi</h4>
+                    <div class="compact-map-wrapper">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d246.96394363923136!2d113.88501888406992!3d-7.955153375599421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1748319323031!5m2!1sid!2sid" 
+                                width="100%" 
+                                height="200" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy"></iframe>
+                    </div>
+                    <a href="https://maps.app.goo.gl/zUoHSAwSWkqJ8LS8A" target="_blank" class="compact-map-link">
+                        <i class="fas fa-map-marker-alt"></i> Petunjuk Arah
+                    </a>
+                </div>
+            </div>
+        </section>
+
+            <section class="rsvp-section">
+                <h3>Konfirmasi Kehadiran</h3>
+                <form id="rsvpForm">
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="attendance">Konfirmasi Kehadiran</label>
+                        <select id="attendance" required>
+                            <option value="">Pilih</option>
+                            <option value="Hadir">Hadir</option>
+                            <option value="Tidak Hadir">Tidak Hadir</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Pesan (opsional)</label>
+                        <textarea id="message" rows="3"></textarea>
+                    </div>
+                    <button type="button" id="whatsappButton">Kirim via WhatsApp</button>
+                </form>
+            </section>
+        </main>
+        
+        <footer>
+            <div class="footer-decoration">
+                <div class="floral-border top"></div>
+                <p>Kami berharap<br>dapat berbagi kebahagiaan ini bersama Anda</p>
+                <div class="floral-border bottom"></div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
