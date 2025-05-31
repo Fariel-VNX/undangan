@@ -497,33 +497,3 @@ footer {
     left: 100%;
     margin-left: 15px;
 }
-/* Gaya Kontrol Musik */
-.music-control {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-#musicBtn {
-    background: 000000;
-    border: none;
-    width: 10000px;
-    height: 10000px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-#musicBtn:hover {
-    background: rgba(122, 139, 122, 0.9);
-    transform: scale(1.1);
-}
-
-.music-icon:before {
-    content: "\f001"; /* Ikon musik Font Awesome */
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-}
